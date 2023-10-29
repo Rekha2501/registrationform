@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: pink
+
+        }
+        #registrationForm {
+            width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: white
+
+
+        }
+        input[type="text"], input[type="password"], select {
+            width: 90%;
+            margin: 5px 10px;
+            padding: 10px;
+
+        }
+
+        input[type="submit"] {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+             margin: 5px 10px;
+        }
+        label{
+             margin: 5px 10px;
+        }
+        h2{
+            text-align: center
+        }
+        select{
+         width: 95%;
+            
+       
+    </style>
+</head>
+<body>
+    <form id="registrationForm">
+        <h2>Registration Form</h2>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const gender = document.getElementById('gender').value;
+
+            // You can add your registration logic here.
+            // For this example, we're just displaying the collected data.
+            alert(`Registration Data:\nFirst Name: ${firstName}\nLast Name: ${lastName}\nEmail: ${email}\nGender: ${gender}`);
+        });
+    </script>
+</body>
+</html>
